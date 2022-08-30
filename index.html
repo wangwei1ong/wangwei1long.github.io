@@ -158,6 +158,82 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/30/springcloud%E5%A4%8D%E7%9B%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blogiamge.gif">
+      <meta itemprop="name" content="WeiLong Wang">
+      <meta itemprop="description" content="问渠哪得清如许,为有源头活水来">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人网站|博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/08/30/springcloud%E5%A4%8D%E7%9B%98/" class="post-title-link" itemprop="url">springcloud复盘</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-08-30 17:28:37 / 修改时间：17:31:35" itemprop="dateCreated datePublished" datetime="2022-08-30T17:28:37+08:00">2022-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/springcloud/" itemprop="url" rel="index"><span itemprop="name">-springcloud</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="springcloud搭建框架复盘总结"><a href="#springcloud搭建框架复盘总结" class="headerlink" title="springcloud搭建框架复盘总结"></a>springcloud搭建框架复盘总结</h2><p>第一步 先在idea创建Maven项目，再项目中创建Moudle(各种模块)，<br>选择模块需要的依赖，<br>通过application。yml文件对模块进行配置（配置端口号，Mybatis，数据源，nacos注册中心）<br>第二步，打开nacos程序，通过浏览器打开nacos控制台，查看服务列表是否启动</p>
+<h1 id="springcloud模块"><a href="#springcloud模块" class="headerlink" title="springcloud模块"></a>springcloud模块</h1><pre><code>springcloud分为服务提供者和消费者，
+这就涉及到模块之间接口服务的调用（消费者模块调用提供者的服务），
+在创建消费者模块后，
+需要在主类上添加@EnableFeignClients和@EnableDiscoveryClient使其成为消费者（客户端），
+添加完成后，创建controller层和service层，service层里创建和provider交互的接口，
+在接口上添加@Feignclient(value =&quot;provider_application_name&quot;) 注解
+再创建和调用提供者服务的抽象方法（在抽象方法上天加@RequestMapping(&quot;provider-service-name&quot;)注意：传实体类参数时，参数前加@RequestBody注解）
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/18/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -363,20 +439,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
